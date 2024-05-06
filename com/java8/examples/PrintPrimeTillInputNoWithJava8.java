@@ -1,3 +1,5 @@
+package com.java8.examples;
+
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
