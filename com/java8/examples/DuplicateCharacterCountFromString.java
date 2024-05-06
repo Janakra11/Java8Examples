@@ -7,7 +7,7 @@ public class DuplicateCharacterCountFromString {
 
     public static void main(String[] args) {
 
-        String str = "Janakraj";
+        String str = "Janakraj Raosaheb Khatal";
 
         Map<Character, Long> characterCountMap = characterCountInGivenStringUsingJava8(str);
 
@@ -19,6 +19,7 @@ public class DuplicateCharacterCountFromString {
 
         return str.chars()
                 .mapToObj(c->(char)c)
-                .collect(Collectors.groupingBy(c->c, Collectors.counting()));
+                .filter(ch->!Character.isSpaceChar(ch))
+                .collect(Collectors.groupingBy(c-> c,  Collectors.counting()));
     }
 }
